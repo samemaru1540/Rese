@@ -1,0 +1,14 @@
+.body {
+  max-width: 1230px;
+}
+
+.header {
+  padding: 50px 200px;
+}
+
+.header__logo {
+  font-size: 40px;
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}

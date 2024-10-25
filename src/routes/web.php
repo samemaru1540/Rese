@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,6 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [LoginController::class, 'index']);
+    Route::get('/', [AuthController::class, 'index']);
+    Route::get('/', [ShopController::class, 'index']);
 });
-
-Route::post('/register', [RegisterController::class, 'index'])->name('register/index');
