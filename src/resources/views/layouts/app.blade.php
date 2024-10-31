@@ -12,6 +12,9 @@
 
 <body>
   <div class="header">
+    <div class="icon">
+      <span class="icon_line"></span>
+    </div>
     <a href="/" class="header__logo">Rese</a>
   </div>
   <main>

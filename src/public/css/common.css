@@ -1,14 +1,61 @@
 .body {
   max-width: 1230px;
+  margin: 0 auto;
+  padding: 100px 100px;
 }
 
 .header {
-  padding: 50px 200px;
+  display: flex;
+  padding: 50px 150px;
 }
 
 .header__logo {
   font-size: 40px;
-  color: blue;
+  color: #3578FF;
   text-decoration: none;
   font-weight: bold;
+  padding: 5px 15px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  background-color: #3578FF;
+  /* アイコンの背景色 */
+  border-radius: 15px;
+  /* 角丸 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* 影 */
+  position: relative;
+}
+
+.icon::before,
+.icon::after,
+.icon .icon_line {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  /* 横線の色 */
+  position: absolute;
+  left: 15px;
+}
+
+/* 横線の位置調整 */
+.icon::before {
+  width: 30%;
+  top: 20px;
+}
+
+.icon .icon_line {
+  width: 50%;
+  text-align: center;
+}
+
+.icon::after {
+  width: 10%;
+  top: 70%;
 }
