@@ -1,0 +1,52 @@
+.contents{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.content{
+  width: calc(95% / 4);
+}
+
+.item{
+  margin: 20px 10px;
+  box-shadow: 2px 2px 5px gray;
+  border-radius: 10px;
+}
+
+.shop__image {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.shop__item {
+  padding: 20px;
+}
+
+.shop__title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.shop__tag {
+  display: flex;
+}
+
+.shop__tag-item {
+  padding-left: 5px;
+}
+
+.shop__btn {
+  padding: 20px 0;
+}
+
+.shop__btn-submit {
+  color: white;
+  background-color: #3578FF;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
