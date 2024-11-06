@@ -27,4 +27,24 @@ class Shop extends Model
     {
         return $this->belongsTo(Genre::class);
     }
+
+    public function reservation()
+    {
+        return $this->belongsTo(Reservation::class);
+    }
+
+    public function favorite()
+    {
+        return $this->belongsTo(Favorite::class);
+    }
+
+    public function shop_owner()
+    {
+        return $this->belongsTo(Shop_owner::class);
+    }
+
+    public function review()
+    {
+        return $this->belongsTo(Review::class);
+    }
 }
