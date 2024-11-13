@@ -44,21 +44,21 @@ class User extends Authenticatable
 
     public function reservation()
     {
-        return $this->belongsTo(Reservation::class);
+        return $this->hasMany(Reservation::class);
     }
 
     public function favorite()
     {
-        return $this->belongsTo(Favorite::class);
+        return $this->hasMany(Favorite::class);
     }
 
         public function shop_owner()
     {
-        return $this->belongsTo(Shop_owner::class);
+        return $this->hasMany(Shop_owner::class);
     }
 
     public function review()
     {
-        return $this->belongsTo(Review::class);
+        return $this->hasMany(Review::class);
     }
 }
