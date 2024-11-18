@@ -23,4 +23,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
     Route::get('/detail/{shop_id}', [DetailController::class, 'detail']);
     Route::post('/detail/{shop_id}', [ReservationController::class, 'store']);
+    Route::get('/reservation_thanks', [ReservationController::class, 'thankYou']);
 });
