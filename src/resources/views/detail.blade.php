@@ -5,13 +5,13 @@
 @endsection
 
 @section('content')
-<div class="content">
+<div class="contents">
   <div class="shop__detail">
     <div class="detail__header">
       <div class="back">
-        <a href="/" class="back__btn">＜</a>
+        <a href="/" class="back__btn"><</a>
       </div>
-      <p>{{ $shop->name }}</p>
+      <p class="detail__name">{{ $shop->name }}</p>
     </div>
 
     <div class="shop__img">
@@ -31,56 +31,53 @@
 
 <form action="/detail/{{ $shop->id }}" class="detail" method="post">
   @csrf
-  <div class="content">
-    <span class="reservation">予約</span>
-    <div class="reservation__input">
-
-      <!--日付入力-->
-      <div class="reservation__input-date">
-        <input type="date" class="date" name="date"  min="{{ \Carbon\Carbon::today()->toDateString() }}" value="{{ old('date') }}">
-        @if ($errors->has('date'))
-          <div class="error__message">
-            {{ $errors->first('date') }}
-          </div>
-        @endif
-      </div>
-
-      <!--時間選択-->
-      <div class="reservation__input-time">
-        <select name="time" class="time">
-          <option value="17:00" {{ old('time') == '17:00' ? 'selected' : '' }}>17:00</option>
-          <option value="17:30" {{ old('time') == '17:30' ? 'selected' : '' }}>17:30</option>
-          <option value="18:00" {{ old('time') == '18:00' ? 'selected' : '' }}>18:00</option>
-          <option value="18:30" {{ old('time') == '18:30' ? 'selected' : '' }}>18:30</option>
-        </select>
-        @if ($errors->has('time'))
-          <div class="error__message">
-            {{ $errors->first('time') }}
-          </div>
-        @endif
-      </div>
-
-      <!--人数選択-->
-      <div class="reservation__input-number">
-        <select name="number" class="number">
-          <option value="1" {{ old('number') == '1' ? 'selected' : '' }}>1人</option>
-          <option value="2" {{ old('number') == '2' ? 'selected' : '' }}>2人</option>
-          <option value="3" {{ old('number') == '3' ? 'selected' : '' }}>3人</option>
-          <option value="4" {{ old('number') == '4' ? 'selected' : '' }}>4人</option>
-        </select>
-        @if ($errors->has('number'))
-        <div class="error__message">
-          {{ $errors->first('number') }}
+  <div class="contents">
+    <div class="content">
+      <span class="reservation">予約</span>
+      <div class="reservation__input">
+        <!--日付入力-->
+        <div class="reservation__input-date">
+          <input type="date" class="date" name="date"  min="{{ \Carbon\Carbon::today()->toDateString() }}" value="{{ old('date') }}">
+          @if ($errors->has('date'))
+            <div class="error__message">
+              {{ $errors->first('date') }}
+            </div>
+          @endif
         </div>
-        @endif
+        <!--時間選択-->
+        <div class="reservation__input-time">
+          <select name="time" class="time">
+            <option value="17:00" {{ old('time') == '17:00' ? 'selected' : '' }}>17:00</option>
+            <option value="17:30" {{ old('time') == '17:30' ? 'selected' : '' }}>17:30</option>
+            <option value="18:00" {{ old('time') == '18:00' ? 'selected' : '' }}>18:00</option>
+            <option value="18:30" {{ old('time') == '18:30' ? 'selected' : '' }}>18:30</option>
+          </select>
+          @if ($errors->has('time'))
+            <div class="error__message">
+              {{ $errors->first('time') }}
+            </div>
+          @endif
+        </div>
+        <!--人数選択-->
+        <div class="reservation__input-number">
+          <select name="number" class="number">
+            <option value="1" {{ old('number') == '1' ? 'selected' : '' }}>1人</option>
+            <option value="2" {{ old('number') == '2' ? 'selected' : '' }}>2人</option>
+            <option value="3" {{ old('number') == '3' ? 'selected' : '' }}>3人</option>
+            <option value="4" {{ old('number') == '4' ? 'selected' : '' }}>4人</option>
+          </select>
+          @if ($errors->has('number'))
+            <div class="error__message">
+              {{ $errors->first('number') }}
+            </div>
+          @endif
+        </div>
       </div>
-    </div>
-
-      <!--予約内容の確認-->
+        <!--予約内容の確認-->
       <div class="reservation__confirm">
         <table class="reservation__confirm-item">
           <tr>
-            <th>Name</th>
+            <th>Shop</th>
             <td>{{ $shop->name }}</td>
           </tr>
           <tr>
@@ -97,7 +94,8 @@
           </tr>
         </table>
       </div>
-      <button class="reservation__btn" type="submit">予約する</button>
+    </div>
+    <button class="reservation__btn">予約する</button>
   </div>
 </form>
 @endsection
