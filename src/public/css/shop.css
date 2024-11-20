@@ -1,14 +1,17 @@
+body {
+  background-color: #eeeeee;
+}
+
 .contents{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 95%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 190px;
 }
 
 .content{
-  width: calc(95% / 4);
+  width: calc(100% / 4);
 }
 
 .item{
