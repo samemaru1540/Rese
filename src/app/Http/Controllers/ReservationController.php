@@ -20,24 +20,20 @@ class ReservationController extends Controller
         $currentDate = date('Y-m-d');
         $currentTime = date('H:i:s');
 
+        $number = $request->number;
         // 予約の日付と時刻が指定されていない場合に、デフォルト値を使う
-        $Date = $request->input('date', $currentDate);
-        $Time = $request->input('time', $currentTime);
+        $date = $request->input('date', $currentDate);
+        $time = $request->input('time', $currentTime);
 
         $reservation = Reservation::create([
             'user_id' => $user->id,
             'shop_id' => $request->shop_id,
-            'date' => $Date,
-            'time' => $Time,
+            'date' => $date,
+            'time' => $time,
             'number' => $request->number,
         ]);
 
         $shop = Shop::findOrFail($request->shop_id);
-        return view('detail', compact('reservation', 'shop'));
-    }
-
-    public function thankYou()
-    {
         return view('reservation_thanks');
     }
 }
