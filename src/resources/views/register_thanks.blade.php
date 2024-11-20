@@ -13,3 +13,4 @@
     <button class="login_btn-submit">ログインする</button>
   </form>
 </div>
+@endsection

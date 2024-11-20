@@ -37,7 +37,7 @@ class RegisterRequest extends FormRequest
         'email.required' => 'メールアドレスを入力してください',
         'email.email' => 'メール形式で入力してください',
         'email.Rule::unique('users')->ignore($this->id)' => 'すでに同じメールアドレスが登録されています',
-        'password.required' => '名前を入力してください',
+        'password.required' => 'パスワードを入力してください',
         'password.min:8' => '8文字以上で入力してください',
         ];
     }
