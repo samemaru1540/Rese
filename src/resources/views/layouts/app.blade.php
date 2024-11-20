@@ -12,10 +12,28 @@
 
 <body>
   <div class="header">
-    <div class="icon">
-      <span class="icon_line"></span>
+    <div class="header__item">
+      <div class="icon">
+        <span class="icon_line"></span>
+      </div>
+      <a href="/" class="header__logo">Rese</a>
     </div>
-    <a href="/" class="header__logo">Rese</a>
+    <ul class="header__nav">
+      <li class="header__nav-item">
+        <a href="/" class="home_page">ホームページ</a>
+      </li>
+      @if (Auth::check())
+      <li class="header__nav-item">
+        <a href="/my_page" class="my_page">マイページ</a>
+      </li>
+      <li class="header__nav-item">
+        <form action="/login" class="logout" method="post">
+          @csrf
+          <button class="logout__btn">ログアウト</button>
+        </form>
+      </li>
+      @endif
+    </ul>
   </div>
   <main>
     @yield('content')

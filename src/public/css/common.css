@@ -2,16 +2,22 @@
   max-width: 1230px;
   margin: 0 auto;
   padding: 100px 100px;
+  background-color: #eeeeee;
 }
 
 .header {
   display: flex;
-  padding: 50px 150px;
+  justify-content: space-between;
+  padding: 50px 200px;
+}
+
+.header__item {
+  display: flex;
 }
 
 .header__logo {
   font-size: 40px;
-  color: #3578FF;
+  color: #305dff;
   text-decoration: none;
   font-weight: bold;
   padding: 5px 15px;
@@ -20,7 +26,7 @@
 .icon {
   width: 70px;
   height: 70px;
-  background-color: #3578FF;
+  background-color: #305dff;
   /* アイコンの背景色 */
   border-radius: 15px;
   /* 角丸 */
@@ -58,4 +64,25 @@
 .icon::after {
   width: 10%;
   top: 70%;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-item {
+  font-size: 20px;
+  padding: 0 10px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logout__btn {
+  border: none;
+  font-size: 20px;
+  background-color: #eeeeee;
 }

@@ -21,7 +21,7 @@ use App\Http\Controllers\DetailController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/', [ShopController::class, 'index']);
+    Route::POST('/logout', [AuthController::class, 'logout']);
     Route::get('/detail/{shop_id}', [DetailController::class, 'detail']);
     Route::post('/detail/{shop_id}', [ReservationController::class, 'store']);
-    Route::get('/reservation_thanks', [ReservationController::class, 'thankYou']);
 });
