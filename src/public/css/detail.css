@@ -30,7 +30,9 @@ main {
   background-color: white;
   box-shadow: 5px 5px 5px gray;
   border-radius: 5px;
-  padding: 5px 10px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
 }
 
 .back__btn {
