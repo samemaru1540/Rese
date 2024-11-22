@@ -6,6 +6,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
     Route::POST('/logout', [AuthController::class, 'logout']);
     Route::get('/detail/{shop_id}', [DetailController::class, 'detail']);
-    Route::post('/detail/{shop_id}', [ReservationController::class, 'store']);
+    Route::post('/detail/{shop_id}/reservation', [ReservationController::class, 'store']);
+    Route::post('/favorite', [FavoriteController::class, 'create'])->name('favorite.create');
+
 });

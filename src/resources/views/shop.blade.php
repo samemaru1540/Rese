@@ -20,6 +20,11 @@
               </div>
             <div class="shop__btn">
               <a class="shop__btn-submit" href="/detail/{{ $shop->id }}">詳しく見る</a>
+              <form action="/favorite" method="post">
+                @csrf
+                <input type="hidden" name="shop_id" value="1">
+                <button type="submit">お気に入り登録</button>
+              </form>
             </div>
           </div>
         </div>

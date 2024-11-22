@@ -44,6 +44,8 @@ body {
 
 .shop__btn {
   padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .shop__btn-submit {
@@ -52,4 +54,15 @@ body {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
+}
+
+.favorite__btn {
+  border: none;
+}
+
+.favorite__btn-submit {
+  width: 40px;
+  height: 40px;
+  margin-right: 0;
+  border: none;
 }
