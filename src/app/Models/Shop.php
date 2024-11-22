@@ -30,21 +30,21 @@ class Shop extends Model
 
     public function reservation()
     {
-        return $this->belongsTo(Reservation::class);
+        return $this->hasMany(Reservation::class);
     }
 
-    public function favorite()
+    public function favorites()
     {
-        return $this->belongsTo(Favorite::class);
+        return $this->hasMany(Favorite::class);
     }
 
     public function shop_owner()
     {
-        return $this->belongsTo(Shop_owner::class);
+        return $this->hasOne(Shop_owner::class);
     }
 
     public function review()
     {
-        return $this->belongsTo(Review::class);
+        return $this->hasMany(Review::class);
     }
 }

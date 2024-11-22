@@ -16,11 +16,11 @@ class favorite extends Model
 
     public function shop()
     {
-        return $this->hasMany(Shop::class, 'shop_id');
+        return $this->belongsTo(Shop::class);
     }
 
     public function user()
     {
-        return $this->hasMany(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 }
