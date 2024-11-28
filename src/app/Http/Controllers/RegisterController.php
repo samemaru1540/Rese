@@ -11,6 +11,6 @@ class RegisterController extends Controller
     {
         $form = $request->all();
         User::create($form);
-        return view('register_thanks');
+        return view('thanks');
     }
 }

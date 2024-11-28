@@ -34,6 +34,6 @@ class ReservationController extends Controller
         ]);
 
         $shop = Shop::findOrFail($request->shop_id);
-        return view('reservation_thanks');
+        return view('done');
     }
 }
