@@ -41,6 +41,10 @@ main {
   padding-right: 20px;
 }
 
+img {
+  width: 40px;
+}
+
 .input {
   font-size: 30px;
   width: 70%;
