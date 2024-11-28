@@ -15,7 +15,7 @@
     </div>
     <div class="inputs">
       <div class="input">
-        <span class="label">&#128100;</span>
+        <span class="label"><img src="image/人物アイコン.svg" alt="user" class="user_img"></span>
         <div class="text">
           <input type="text" class="input__item" name="name" value="{{ old('name') }}" placeholder="Username">
         </div>
@@ -26,7 +26,7 @@
         @enderror
       </div>
       <div class="input">
-        <span class="label">&#9993;&#65039;</span>
+        <span class="label"><img src="image/メールの無料アイコン.svg" alt="email" class="email_img"></span>
         <div class="text">
           <input type="email" class="input__item" name="email" value="{{ old('email') }}" placeholder="Email">
         </div>
@@ -37,7 +37,7 @@
         @enderror
       </div>
       <div class="input">
-        <span class="label">&#128274;</span>
+        <span class="label"><img src="image/鍵のクローズアイコン素材.svg" alt="password" class="password_img"></span>
         <div class="text">
           <input type="password" class="input__item" name="password" placeholder="Password">
         </div>
