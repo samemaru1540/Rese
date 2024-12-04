@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MyPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/detail/{shop_id}', [DetailController::class, 'detail']);
     Route::post('/detail/{shop_id}/reservation', [ReservationController::class, 'store']);
     Route::post('/{shop_id}/favorite',[FavoriteController::class, 'favorite'])->middleware('auth');
+    Route::get('/my_page', [MyPageController::class, 'index']);
+
 });
