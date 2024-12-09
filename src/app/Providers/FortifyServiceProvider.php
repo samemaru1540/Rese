@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\RegisterController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
@@ -20,7 +22,10 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(
+            RegisteredUserController::class,
+            RegisterController::class
+        );
     }
 
     /**

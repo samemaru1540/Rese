@@ -5,7 +5,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MyPageController;
 
@@ -21,12 +20,12 @@ use App\Http\Controllers\MyPageController;
 */
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [AuthController::class, 'index']);
     Route::get('/', [ShopController::class, 'index']);
     Route::POST('/logout', [AuthController::class, 'logout']);
-    Route::get('/detail/{shop_id}', [DetailController::class, 'detail']);
+    Route::get('/detail/{shop_id}', [ReservationController::class, 'index']);
+    Route::get('/detail/{shop_id}/reservation', [ReservationController::class, 'store']);
     Route::post('/detail/{shop_id}/reservation', [ReservationController::class, 'store']);
-    Route::post('/{shop_id}/favorite',[FavoriteController::class, 'favorite'])->middleware('auth');
+    Route::get('/done', [ReservationController::class, 'done']);
+    Route::post('detail/{shop_id}/favorite',[FavoriteController::class, 'favorite'])->middleware('auth');
     Route::get('/my_page', [MyPageController::class, 'index']);
-
 });
