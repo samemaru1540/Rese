@@ -100,7 +100,7 @@ form.detail {
 }
 
 input.date {
-  width: auto;
+  width: 40%;
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -125,7 +125,7 @@ select.number {
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
-  width: 90%;
+  width: 95%;
 }
 
 .reservation__confirm-item {
@@ -154,4 +154,13 @@ select.number {
 
 .reservation__btn:hover {
   background-color: #003d80;
+}
+
+.confirm-item{
+  border: none;
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
 }

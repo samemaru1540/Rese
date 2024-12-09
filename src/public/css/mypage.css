@@ -1,0 +1,19 @@
+.user_name {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.contents {
+  display: flex;
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+.user-reservation {
+  width: 50%;
+}
+
+.content {
+  width: 50%;
+}
