@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
+    public function index($id)  // $id を引数として受け取る
+    {
+        $shop = Shop::with(['area', 'genre'])->find($id);
+        return view('detail', compact('shop'));
+    }
+
     public function store(Request $request)
     {
         // 予約の作成
@@ -34,6 +40,11 @@ class ReservationController extends Controller
         ]);
 
         $shop = Shop::findOrFail($request->shop_id);
+        return view('done');
+    }
+
+    public function done()
+    {
         return view('done');
     }
 }
