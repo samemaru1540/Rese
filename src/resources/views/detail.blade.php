@@ -17,19 +17,17 @@
     <div class="shop__img">
       <img src="{{ $shop->image_url }}" alt="イメージ画像" class="shop__image">
     </div>
-
     <div class="shop__tag-item">
       <p>#{{ $shop->area->name }}</p>
       <p>#{{ $shop->genre->name }}</p>
     </div>
-
     <div class="shop__outline">
       <p>{{ $shop->outline }}</p>
     </div>
   </div>
 </div>
 
-<form action="/detail/{{ $shop->id }}" class="detail" method="post">
+<form action="/detail/{{ $shop->id }}/reservation" class="detail" method="post">
   @csrf
   <div class="contents">
     <div class="content">
@@ -95,7 +93,7 @@
         </table>
       </div>
     </div>
-    <button class="reservation__btn">予約する</button>
+    <button class="reservation__btn" type="submit">予約する</button>
   </div>
 </form>
 @endsection
