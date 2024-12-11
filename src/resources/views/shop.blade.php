@@ -21,11 +21,11 @@
             <a class="shop__btn-submit" href="/detail/{{ $shop->id }}">詳しく見る</a>
             
             <!-- お気に入り登録フォーム -->
-            <form action="/{{ $shop->id }}/favorite" class="favorite__btn" method="post">
+            <form action="/detail/{shop_id}/favorite" class="favorite__btn" method="post">
               @csrf
               <button class="favorite__btn-submit">
                 <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                <img src="{{ asset('image/ハートのアイコン素材 1.svg') }}" alt="お気に入り">
+                <img src="{{ asset('image/でっぷりハートアイコン.svg') }}" alt="お気に入り" class="favorite__img">
               </button>
             </form>
           </div>

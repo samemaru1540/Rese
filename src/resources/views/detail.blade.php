@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<form action="/detail/{{ $shop->id }}/reservation" class="detail" method="post">
+<form action="{{ route('reservation.store') }}" class="detail" method="post">
   @csrf
   <div class="contents">
     <div class="content">

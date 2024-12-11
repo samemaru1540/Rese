@@ -9,6 +9,8 @@
     <div class="text">
       <p class="p_text">ご予約ありがとうございます</p>
     </div>
-    <form action="/" class="back__btn">戻る</form>
+    <form action="/" class="btn">
+      <button class="btn-submit">戻る</button>
+    </form>
   </div>
 @endsection
