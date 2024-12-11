@@ -27,6 +27,8 @@ body {
 
 .shop__item {
   padding: 20px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .shop__title {
@@ -46,11 +48,12 @@ body {
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .shop__btn-submit {
   color: white;
-  background-color: #3578FF;
+  background-color: #305dff;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
@@ -63,8 +66,16 @@ body {
 .favorite__btn-submit {
   margin-right: 0;
   border: none;
+  background-color: white;
+  transition: background-color 0.3s ease;
 }
 
-img {
-  width: 40px;
+.favorite__img {
+  width: 60px;
+  fill: #eeeeee;
+}
+
+.favorite__img.heart-active {
+  fill: #ff0000;
+  /* お気に入り登録中の色 */
 }

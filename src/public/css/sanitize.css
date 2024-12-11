@@ -253,9 +253,6 @@ overflow: hidden;
 * Collapse border spacing in all browsers (opinionated).
 */
 
-table {
-border-collapse: collapse;
-}
 
 /* Forms
 * ========================================================================== */
