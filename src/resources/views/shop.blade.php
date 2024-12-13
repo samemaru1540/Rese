@@ -21,7 +21,7 @@
       </li>
       <li class="search__li">
         <div class="genre__search">
-          <select class="create-form__item-select" name="genre" img="image/三角矢印のアイコン素材 下.svg">
+          <select class="create-form__item-select" name="genre">
             <option value="">All genre</option>
             @foreach($genres as $genre)
               <option value="{{ $genre->id }}">{{ $genre->name }}</option>
@@ -31,7 +31,8 @@
       </li>
       <li class="search__li">
         <div class="shop__search-item">
-          <input type="text" class="shop__search" name="shop" value="{{ old('shop') }}" placeholder="Search ...">
+          <img src="/image/検索用の虫眼鏡アイコン素材.svg" alt="虫眼鏡" class="shop__search-img">
+          <input type="text" class="shop__search" name="shop" value="{{ old('shop') }}" placeholder="Search ..." >
         </div>
       </li>
     </ul>
@@ -60,7 +61,7 @@
               @csrf
               <button class="favorite__btn-submit">
                 <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                <img src="{{ asset('image/でっぷりハートアイコン.svg') }}" alt="お気に入り" class="favorite__img">
+                <img src="{{ $shop->isFavorited ? asset('image/でっぷりハートアイコンのコピー.svg') : asset('image/でっぷりハートアイコン.svg') }}" alt="お気に入り" class="favorite__img">
               </button>
             </form>
           </div>
