@@ -21,7 +21,7 @@ use App\Http\Controllers\AdminController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
-    Route::get('/detail', [ShopController::class, 'index'])->name('shop.detail');
+    Route::get('/detail/{shop_id}', [ShopController::class, 'index'])->name('shop.detail');
     Route::POST('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/mypage', [AdminController::class, 'index'])->name('mypage');
 
