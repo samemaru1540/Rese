@@ -38,6 +38,12 @@ class Shop extends Model
         return $this->hasMany(Favorite::class);
     }
 
+    // ログイン中のユーザーがお気に入りに登録しているか判定
+    public function isFavoritedBy($userId)
+    {
+        return $this->favorites()->where('user_id', $userId)->exists();
+    }
+
     public function shop_owner()
     {
         return $this->hasOne(Shop_owner::class);
