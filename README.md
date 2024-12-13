@@ -1,6 +1,6 @@
 # Rese
 Rese (飲食店予約アプリ)
-![alt text](<スクリーンショット 2024-12-13 18.08.19.png>)
+![alt text](<スクリーンショット 2024-12-13 18.08.41.png>)
 
 ## 作成した目的
 勉強のアウトプット、模擬案件を通して実践に近い開発経験を積むため。
@@ -69,6 +69,6 @@ php artisan db:seed
 
 ## アカウントの種類
 ログイン、テスト用アカウント
-- テストユーザー
-email `testuser@icloud.com`
-password `testuser`
+ テストユーザー  
+ email `testuser@icloud.com`  
+  password `testuser`
