@@ -68,7 +68,7 @@ php artisan db:seed
 ```
 
 ## アカウントの種類
-ログイン、テスト用アカウント
+ログイン、テスト用アカウント  
  テストユーザー  
  email `testuser@icloud.com`  
   password `testuser`
