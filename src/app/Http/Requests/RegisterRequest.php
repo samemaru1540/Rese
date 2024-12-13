@@ -25,8 +25,14 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:191',
-            'email' => 'required|email|string|max191|Rule::unique('users')->ignore($this->id)',
-            'password' => 'required|min:8|max191'
+            'email' => [
+                'required',
+                'email',
+                'string',
+                'max:191',
+                'Rule::unique(\'users\')->ignore($this->id)',
+        ],
+            'password' => 'required|min:8|max191',
         ];
     }
 
@@ -36,7 +42,7 @@ class RegisterRequest extends FormRequest
         'name.required' => '名前を入力してください',
         'email.required' => 'メールアドレスを入力してください',
         'email.email' => 'メール形式で入力してください',
-        'email.Rule::unique('users')->ignore($this->id)' => 'すでに同じメールアドレスが登録されています',
+        'email.Rule::unique(\'users\')->ignore($this->id)' => 'すでに同じメールアドレスが登録されています',
         'password.required' => 'パスワードを入力してください',
         'password.min:8' => '8文字以上で入力してください',
         ];
