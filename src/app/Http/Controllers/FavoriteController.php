@@ -11,13 +11,21 @@ class FavoriteController extends Controller
 {
     public function store(Request $request)
     {
-        // データを保存
-        Favorite::create([
-            'user_id' => Auth::id(), // 現在ログインしているユーザーのID
-            'shop_id' => $request->shop_id, // リクエストから取得したshop_id
-        ]);
+        $favorite = Favorite::where('user_id', Auth::id())
+                        ->where('shop_id', $request->shop_id)
+                        ->first();
 
-        // 成功時にリダイレクト
+        if ($favorite) {
+            // お気に入り解除
+            $favorite->delete();
+        } else {
+            // お気に入り登録
+            Favorite::create([
+                'user_id' => Auth::id(),
+                'shop_id' => $request->shop_id,
+            ]);
+        }
+
         return redirect()->back();
     }
 }

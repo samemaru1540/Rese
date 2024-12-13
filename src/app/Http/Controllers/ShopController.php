@@ -33,16 +33,25 @@ class ShopController extends Controller
         // 検索結果を取得
         $shops = $query->get();
 
-        return view('shop', compact('shops'));
+        $areas = Area::all();  // エリア一覧
+        $genres = Genre::all();  // ジャンル一覧
+
+        return view('shop', compact('shops', 'areas', 'genres'));
     }
 
     public function index()
     {
+        $userId = Auth::id(); // 現在のログインユーザーID
         $shops = Shop::all();
+
+        foreach ($shops as $shop) {
+            $shop->isFavorited = $shop->isFavoritedBy($userId);
+        }
+
         $areas = Area::all();  // エリア一覧
         $genres = Genre::all();  // ジャンル一覧
 
-    return view('shop', compact('shops', 'areas', 'genres'));
+        return view('shop', compact('shops', 'areas', 'genres'));
     }
 
     public function detail($id)  // $id を引数として受け取る
