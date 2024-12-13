@@ -2,6 +2,48 @@ body {
   background-color: #eeeeee;
 }
 
+.search {
+  background-color: white;
+  width: 1300px;
+  box-shadow: 5px 5px 5px gray;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  padding-right: 40px;
+  background-color: white;
+}
+
+li {
+  font-size: 20px;
+}
+
+.area__search {
+  margin-left: -30px;
+}
+
+.area__search
+.genre__search {
+  margin-left: -20px;
+}
+
+.create-form__item-select, .shop__search {
+  border: none;
+  font-weight: 100;
+  font-size: 30px;
+  padding: 0 50px 0 10px;
+}
+
+.create-form__item-select {
+  border-right: 2px solid gray;
+}
+
+.shop__search-item {
+  width: 150%;
+}
+
 .contents{
   display: flex;
   flex-wrap: wrap;
