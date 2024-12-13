@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class FavoriteController extends Controller
 {
-    public function favorite(Request $request)
+    public function store(Request $request)
     {
         // データを保存
         Favorite::create([
