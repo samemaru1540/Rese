@@ -4,6 +4,41 @@
 <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
 @endsection
 
+@section('header')
+<div class="search">
+  <form action="{{ route('search') }}" method="post">
+    @csrf
+    <ul class="search__ul">
+      <li class="search__li">
+        <div class="area__search">
+          <select class="create-form__item-select" name="area">
+            <option value="">All area </option>
+            @foreach($areas as $area)
+              <option value="{{ $area->id }}">{{ $area->name }}</option>
+            @endforeach
+          </select>
+        </div>
+      </li>
+      <li class="search__li">
+        <div class="genre__search">
+          <select class="create-form__item-select" name="genre" img="image/三角矢印のアイコン素材 下.svg">
+            <option value="">All genre</option>
+            @foreach($genres as $genre)
+              <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+            @endforeach
+          </select>
+        </div>
+      </li>
+      <li class="search__li">
+        <div class="shop__search-item">
+          <input type="text" class="shop__search" name="shop" value="{{ old('shop') }}" placeholder="Search ...">
+        </div>
+      </li>
+    </ul>
+  </form>
+</div>
+@endsection
+
 @section('content')
 <div class="contents">
   @foreach ($shops as $shop)
@@ -21,7 +56,7 @@
             <a class="shop__btn-submit" href="/detail/{{ $shop->id }}">詳しく見る</a>
             
             <!-- お気に入り登録フォーム -->
-            <form action="/detail/{shop_id}/favorite" class="favorite__btn" method="post">
+            <form action="/favorite" class="favorite__btn" method="post">
               @csrf
               <button class="favorite__btn-submit">
                 <input type="hidden" name="shop_id" value="{{ $shop->id }}">

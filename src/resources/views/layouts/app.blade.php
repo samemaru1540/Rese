@@ -18,6 +18,9 @@
       </div>
       <a href="/" class="header__logo">Rese</a>
     </div>
+    <div class="header__item">
+      @yield('header')
+    </div>
   </div>
   <main>
     @yield('content')
