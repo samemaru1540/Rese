@@ -16,32 +16,41 @@ ul {
   background-color: white;
 }
 
-li {
-  font-size: 20px;
-}
-
 .area__search {
   margin-left: -30px;
-}
-
-.area__search
-.genre__search {
-  margin-left: -20px;
 }
 
 .create-form__item-select, .shop__search {
   border: none;
   font-weight: 100;
   font-size: 30px;
-  padding: 0 50px 0 10px;
+  padding: 0 50px 0 20px;
 }
 
 .create-form__item-select {
-  border-right: 2px solid gray;
+  width: 200px;
+  border-right: 2px solid #eeeeee;
+  appearance: none;
+  background-image: url("../image/三角矢印のアイコン素材.svg");
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  /* 画像のサイズ（幅 高さ）*/
+  background-position: right 12px center;
+    /* 画像の位置 */
+}
+
+.shop__search {
+  width: 700px;
 }
 
 .shop__search-item {
   width: 150%;
+}
+
+.shop__search-img {
+  width: 30px;
+  height: 30px;
+  padding: 0 0 10px 20px;
 }
 
 .contents{
@@ -117,7 +126,7 @@ li {
   fill: #eeeeee;
 }
 
-.favorite__img.heart-active {
-  fill: #ff0000;
-  /* お気に入り登録中の色 */
+.favorite__btn-submit.favorited {
+  background-color: #ff0000;
+  /* お気に入り中の色 */
 }
