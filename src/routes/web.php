@@ -6,7 +6,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\FavoriteController;
-use App\Http\Controllers\MyPageController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +21,18 @@ use App\Http\Controllers\MyPageController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
-    Route::POST('/logout', [AuthController::class, 'logout']);
-    Route::get('/detail/{shop_id}', [ReservationController::class, 'index']);
-    Route::get('/detail/{shop_id}/reservation', [ReservationController::class, 'store']);
-    Route::post('/detail/{shop_id}/reservation', [ReservationController::class, 'store']);
-    Route::get('/done', [ReservationController::class, 'done']);
-    Route::post('detail/{shop_id}/favorite',[FavoriteController::class, 'favorite'])->middleware('auth');
-    Route::get('/my_page', [MyPageController::class, 'index']);
+    Route::get('/detail', [ShopController::class, 'index'])->name('shop.detail');
+    Route::POST('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/mypage', [AdminController::class, 'index'])->name('mypage');
+
+    Route::post('/detail/{shop_id}/reservation', [ReservationController::class, 'store'])->name('reservation.store');
+    Route::delete('/mypage/reservation/delete',[AdminController::class, 'reservationDestroy'])->name('reservation.delete');
+
+    Route::post('/favorite',[FavoriteController::class, 'store']);
+    Route::delete('/mypage/favorite/delete',[AdminController::class, 'favoriteDestroy'])->name('favorite.delete');
+
+    Route::get('/done', [ReservationController::class, 'done'])->name('reservation.done');
+    Route::get('/thanks', [RegisterController::class, 'thanks'])->name('register.thanks');
+
+    Route::post('/search', [ShopController::class, 'search'])->name('search');
 });
